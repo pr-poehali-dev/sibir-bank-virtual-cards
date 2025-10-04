@@ -104,50 +104,50 @@ const Cards = () => {
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 rounded-full blur-3xl"></div>
                 
-                <div className="relative">
+                <div className="relative z-10">
                   <div className="flex items-start justify-between mb-8">
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Название карты</p>
-                      <p className="font-semibold text-lg">{card.name}</p>
+                      <p className="text-sm text-gray-300 mb-1">Название карты</p>
+                      <p className="font-semibold text-lg text-white">{card.name}</p>
                     </div>
                     <div className="w-12 h-8 gradient-gold rounded"></div>
                   </div>
 
                   <div className="mb-8">
-                    <p className="text-2xl font-mono tracking-wider mb-4">{card.number}</p>
+                    <p className="text-2xl font-mono tracking-wider mb-4 text-white">{card.number}</p>
                     <div className="flex gap-8">
                       <div>
-                        <p className="text-xs text-gray-400 mb-1">Действительна до</p>
-                        <p className="font-semibold">{card.expiry}</p>
+                        <p className="text-xs text-gray-300 mb-1">Действительна до</p>
+                        <p className="font-semibold text-white">{card.expiry}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-400 mb-1">CVV</p>
-                        <p className="font-semibold">{card.cvv}</p>
+                        <p className="text-xs text-gray-300 mb-1">CVV</p>
+                        <p className="font-semibold text-white">{card.cvv}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="border-t border-white/20 pt-4 mb-6">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-gray-400">Баланс</span>
-                      <span className="text-xl font-bold">{card.balance.toLocaleString('ru-RU')} ₽</span>
+                      <span className="text-sm text-gray-300">Баланс</span>
+                      <span className="text-xl font-bold text-white">{card.balance.toLocaleString('ru-RU')} ₽</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-400">Лимит</span>
-                      <span className="text-sm">{card.limit.toLocaleString('ru-RU')} ₽</span>
+                      <span className="text-sm text-gray-300">Лимит</span>
+                      <span className="text-sm text-white">{card.limit.toLocaleString('ru-RU')} ₽</span>
                     </div>
                   </div>
 
                   <div className="flex gap-2">
                     <button
                       onClick={() => toggleCardStatus(card.id)}
-                      className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-medium transition-colors"
+                      className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-medium transition-colors text-white"
                     >
                       {card.isActive ? 'Заблокировать' : 'Активировать'}
                     </button>
                     <button
                       onClick={() => deleteCard(card.id)}
-                      className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 rounded-lg text-sm font-medium transition-colors"
+                      className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 rounded-lg text-sm font-medium transition-colors text-white"
                     >
                       <Icon name="Trash2" size={16} />
                     </button>
