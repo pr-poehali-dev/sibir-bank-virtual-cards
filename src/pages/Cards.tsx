@@ -66,7 +66,12 @@ const Cards = () => {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
 
-      <section className="pt-32 pb-12 bg-gradient-to-br from-navy to-slate-800">
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy via-slate-900 to-navy"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
@@ -86,8 +91,9 @@ const Cards = () => {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cards.map((card) => (
               <div
@@ -154,8 +160,8 @@ const Cards = () => {
       </section>
 
       {showCreateModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-display text-2xl font-bold text-navy">Новая виртуальная карта</h2>
               <button
@@ -176,7 +182,7 @@ const Cards = () => {
                   value={newCardName}
                   onChange={(e) => setNewCardName(e.target.value)}
                   placeholder="Например: Покупки онлайн"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none text-gray-900 placeholder:text-gray-400"
                 />
               </div>
 
@@ -188,7 +194,7 @@ const Cards = () => {
                   type="number"
                   value={newCardLimit}
                   onChange={(e) => setNewCardLimit(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none text-gray-900"
                 />
               </div>
             </div>
@@ -204,8 +210,11 @@ const Cards = () => {
         </div>
       )}
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute top-1/2 left-0 w-72 h-72 bg-gold/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-navy/5 rounded-full blur-3xl"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-navy mb-8 text-center">
               Преимущества виртуальных карт
